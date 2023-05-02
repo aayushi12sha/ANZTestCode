@@ -164,7 +164,7 @@ public class  HowMuchICouldBorrowPage extends AbstractComponents {
     }
 
     public String showEstimatedAmountThatCanBeBorrowed() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(6000);
         return EstimatedBorrowAmount.getText();
 
     }
@@ -172,7 +172,11 @@ public class  HowMuchICouldBorrowPage extends AbstractComponents {
     public void clickStartOver(){
 
         visibilityOfElementLocated(startOver);
+        driver.findElement(startOver).click();
+
     }
+
+
 
 
 

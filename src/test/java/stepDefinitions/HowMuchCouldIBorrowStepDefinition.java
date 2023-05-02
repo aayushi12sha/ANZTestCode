@@ -4,6 +4,7 @@ package stepDefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -69,7 +70,12 @@ public class HowMuchCouldIBorrowStepDefinition {
         Assert.assertEquals(result,input);
 
     }
-
+    @And("I click on start over button for Form reset")
+    public void i_click_on_start_over_button() throws InterruptedException {
+        howMuchICouldBorrowPage.clickStartOver();
+        String value= howMuchICouldBorrowPage.showEstimatedAmountThatCanBeBorrowed();
+        Assert.assertEquals(value,"$0");
+    }
 
     @Given("I have entered person's following details:{string}")
     public void i_have_entered_persons_following_details(String MonthlyLivingExpenses)
