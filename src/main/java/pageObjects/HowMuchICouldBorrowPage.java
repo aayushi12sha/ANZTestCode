@@ -71,10 +71,13 @@ public class  HowMuchICouldBorrowPage extends AbstractComponents {
     @FindBy(css = "span#borrowResultTextAmount")
     WebElement EstimatedBorrowAmount;
 
-    @FindBy(css = "button[class='start-over']")
+   /* @FindBy(css = "button[class='start-over']")
     WebElement StartOver;
     @FindBy(css = "div[class='borrow__error__text']")
-    WebElement ErrorText;
+    WebElement ErrorText;*/
+
+    private By startOver = By.cssSelector("button[class='start-over']");
+    private By errorText = By.cssSelector("div[class='borrow__error__text']");
 
     public  void selectApplicationType(String applicationType) throws InvalidValuePassedException {
 
@@ -124,38 +127,35 @@ public class  HowMuchICouldBorrowPage extends AbstractComponents {
     }
     public  void enterYourAnnualIncome(String annualIncome)
     {
-        yourAnnualIncome.sendKeys(String.valueOf(annualIncome));
+        yourAnnualIncome.sendKeys(annualIncome);
 
     }
 
     public  void enterYourAnnualOtherIncome(String annualOtherIncome){
-        yourAnnualOtherIncome.sendKeys(String.valueOf(annualOtherIncome));
+        yourAnnualOtherIncome.sendKeys(annualOtherIncome);
     }
     public  void enterMonthlyLivingExpenses(String monthlyExpense){
 
         monthlyLivingExpenses.sendKeys(monthlyExpense);
     }
-    /*public  boolean checkIfMonthlyLivingExpensesIsEmpty(){
 
-        return  monthlyLivingExpenses.getAttribute("value").equals("0") ;
-    }*/
     public  void enterCurrentHomeLoanMonthlyRepayments(String homeLoanRepayments){
-        currentHomeLoanMonthlyRepayments.sendKeys(String.valueOf(homeLoanRepayments));
+        currentHomeLoanMonthlyRepayments.sendKeys(homeLoanRepayments);
     }
 
     public  void enterOtherLoanMonthlyRepayments(String otherLoanRepayments){
 
-        Other_loan_monthly_repayments.sendKeys(String.valueOf(otherLoanRepayments));
+        Other_loan_monthly_repayments.sendKeys(otherLoanRepayments);
     }
 
     public  void enterOtherMonthlyCommitments(String otherMonthlyComitVal){
 
-        Other_monthly_commitments.sendKeys(String.valueOf(otherMonthlyComitVal));
+        Other_monthly_commitments.sendKeys(otherMonthlyComitVal);
     }
 
     public  void enterTotalCreditCardLimits(String totalCreditCardLimitVal){
 
-        Total_credit_card_limits.sendKeys(String.valueOf(totalCreditCardLimitVal));
+        Total_credit_card_limits.sendKeys(totalCreditCardLimitVal);
     }
 
     public void clickWorkOutHowMuchICouldBorrowButton(){
@@ -163,23 +163,22 @@ public class  HowMuchICouldBorrowPage extends AbstractComponents {
         WorkOutHowMuchICouldBorrowButton.click();
     }
 
-    public String showEstimatedAmountThatCanBeBorrowed(){
-
-
+    public String showEstimatedAmountThatCanBeBorrowed() throws InterruptedException {
+        Thread.sleep(5000);
         return EstimatedBorrowAmount.getText();
 
     }
 
     public void clickStartOver(){
 
-        visibilityOfElementLocated(By.cssSelector("button[class='start-over']"));
+        visibilityOfElementLocated(startOver);
     }
 
 
 
     public String checkErrorMessage(){
-        visibilityOfElementLocated(By.cssSelector("div[class='borrow__error__text']"));
-        String error = ErrorText.getText();
+        visibilityOfElementLocated(errorText);
+        String error = driver.findElement(errorText).getText();
         return error;
     }
 

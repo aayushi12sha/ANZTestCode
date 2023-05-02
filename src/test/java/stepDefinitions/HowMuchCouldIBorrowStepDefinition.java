@@ -64,14 +64,15 @@ public class HowMuchCouldIBorrowStepDefinition {
 
     @Then("Borrowing estimate is displayed on the screen {string}")
     public void borrowing_estimate_is_displayed_on_the_screen(String input) throws InterruptedException {
-        Thread.sleep(5000);
+
         String result = howMuchICouldBorrowPage.showEstimatedAmountThatCanBeBorrowed();
-        Assert.assertEquals(input,result);
+        Assert.assertEquals(result,input);
+
     }
 
 
     @Given("I have entered person's following details:{string}")
-    public void i_have_entered_persons_following_details(String MonthlyLivingExpenses)throws InterruptedException
+    public void i_have_entered_persons_following_details(String MonthlyLivingExpenses)
     {
         howMuchICouldBorrowPage = new HowMuchICouldBorrowPage(driver);
         howMuchICouldBorrowPage.enterMonthlyLivingExpenses(MonthlyLivingExpenses);
