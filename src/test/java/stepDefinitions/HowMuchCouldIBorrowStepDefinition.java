@@ -22,17 +22,17 @@ public class HowMuchCouldIBorrowStepDefinition {
     private HowMuchICouldBorrowPage howMuchICouldBorrowPage;
 
 
-    @Before
-    public void setup()
-    {
-        this.driver = TestUtil.setChromeDriver();
-    }
+     @Before
+      public void setup()
+      {
+          this.driver = TestUtil.setChromeDriver();
+      }
 
-    @After
-    public void tearDown()
-    {
-    driver.quit();
-    }
+      @After
+      public void tearDown()
+      {
+          driver.quit();
+      }
 
     @Given("I landed on Calculate How much I could borrow page")
     public void i_landed_on_calculate_how_much_i_could_borrow_page() {

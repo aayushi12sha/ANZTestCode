@@ -27,49 +27,49 @@ public class  HowMuchICouldBorrowPage extends AbstractComponents {
     }
 
     @FindBy(css = "label[for='application_type_single']")
-    WebElement Single;
+    private WebElement Single;
 
     @FindBy(css = "label[for='application_type_joint']")
-    WebElement Joint;
+    private WebElement Joint;
 
     @FindBy(css = "select[title='Number of dependants']")
-    WebElement Number_of_dependents;
+    private WebElement Number_of_dependents;
 
     @FindBy(css = "label[for='borrow_type_home']")
-    WebElement HomeToLiveIn;
+    private WebElement HomeToLiveIn;
     @FindBy(css = "label[for='borrow_type_investment']")
-    WebElement residentialInvestment;
+    private WebElement residentialInvestment;
 
     @FindBy(css = "input[aria-labelledby='q2q1']")
-    WebElement yourAnnualIncome;
+    private WebElement yourAnnualIncome;
 
     @FindBy(css = "input[aria-labelledby='q2q2']")
-    WebElement yourAnnualOtherIncome;
+    private WebElement yourAnnualOtherIncome;
 
     @FindBy(css = "input[aria-labelledby='q2q3']")
-    WebElement secondApplicantAnnualIncome;
+    private WebElement secondApplicantAnnualIncome;
 
     @FindBy(css = "input[aria-labelledby='q2q4']")
-    WebElement secondApplicantOtherAnnualIncome;
+    private WebElement secondApplicantOtherAnnualIncome;
 
     @FindBy(css = "input[aria-labelledby='q3q1']")
-    WebElement monthlyLivingExpenses;
+    private WebElement monthlyLivingExpenses;
 
     @FindBy(css = "input[aria-labelledby='q3q2']")
-    WebElement currentHomeLoanMonthlyRepayments;
+    private WebElement currentHomeLoanMonthlyRepayments;
     @FindBy(css = "input[aria-labelledby='q3q3']")
-    WebElement Other_loan_monthly_repayments;
+    private WebElement Other_loan_monthly_repayments;
     @FindBy(css = "input[aria-labelledby='q3q4']")
-    WebElement Other_monthly_commitments;
+    private WebElement Other_monthly_commitments;
 
     @FindBy(css = "input[aria-labelledby='q3q5']")
-    WebElement Total_credit_card_limits;
+    private WebElement Total_credit_card_limits;
 
     @FindBy(css = "button#btnBorrowCalculater")
-    WebElement WorkOutHowMuchICouldBorrowButton;
+    private WebElement WorkOutHowMuchICouldBorrowButton;
 
     @FindBy(css = "span#borrowResultTextAmount")
-    WebElement EstimatedBorrowAmount;
+    private WebElement EstimatedBorrowAmount;
 
    /* @FindBy(css = "button[class='start-over']")
     WebElement StartOver;
