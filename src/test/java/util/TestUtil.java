@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -27,6 +28,7 @@ public class TestUtil
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return driver;
     }
+
 
 
 
